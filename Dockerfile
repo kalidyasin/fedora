@@ -36,7 +36,7 @@ COPY .zshrc /home/codeopshq/.zshrc
 
 # zinit update && zinit self-update
 
-RUN zsh -c "source ~/.zshrc"
+RUN zsh -lc
 
 # RUN zsh -c "zinit update"
 
