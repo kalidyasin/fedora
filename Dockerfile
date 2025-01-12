@@ -8,22 +8,20 @@ RUN useradd -m -s $(which zsh) codeopshq
 RUN passwd -d codeopshq
 RUN usermod -aG wheel codeopshq
 
-# Switch to the new user
-USER codeopshq
-
-# Set the working directory
+# Set the working directory for the new user
 WORKDIR /home/codeopshq
 
-# Install Zinit non-interactively
-RUN sh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
-
-# Copy vim and zsh configuration files
+# Switch back to root temporarily to set permissions
 COPY .vimrc /home/codeopshq/.vimrc
 COPY .zshrc /home/codeopshq/.zshrc
 COPY .p10k.zsh /home/codeopshq/.p10k.zsh
-
-# Ensure proper ownership and permissions
 RUN chown -R codeopshq:codeopshq /home/codeopshq
+
+# Switch to the new user
+USER codeopshq
+
+# Install Zinit non-interactively
+RUN sh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
 # Initialize Zinit plugins during the build process
 RUN zsh -lc "source ~/.zshrc && zinit update && zinit self-update"
