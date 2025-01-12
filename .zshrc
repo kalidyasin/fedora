@@ -70,12 +70,12 @@ setopt promptsubst         # enable command substitution in prompt
 #######################################################
 # export EDITOR=nvim
 # export VISUAL=nvim
-export EDITOR=nvim visudo
-export VISUAL=nvim visudo
-export SUDO_EDITOR=nvim
-export FCEDIT=nvim
-export TERMINAL=alacritty
-export BROWSER=com.brave.Browser
+# export EDITOR=nvim visudo
+# export VISUAL=nvim visudo
+# export SUDO_EDITOR=nvim
+# export FCEDIT=nvim
+# export TERMINAL=alacritty
+# export BROWSER=com.brave.Browser
 if [[ -x "$(command -v bat)" ]]; then
 	export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 	export PAGER=bat
@@ -347,7 +347,7 @@ function random_bars() {
 #######################################################
 # ZSH Syntax highlighting
 #######################################################
-source ~/.config/zsh/zsh-syntax-highlightin-tokyonight.zsh
+# source ~/.config/zsh/zsh-syntax-highlightin-tokyonight.zsh
 
 #######################################################
 # Shell integrations
@@ -357,9 +357,9 @@ source ~/.config/zsh/zsh-syntax-highlightin-tokyonight.zsh
 source <(fzf --zsh)
 
 # Zoxide config for zsh plugins 
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
 # eval "$(zoxide init zsh)"
 
 
 # Tmuxifier config for zsh plugins  
-eval "$(tmuxifier init -)"
+# eval "$(tmuxifier init -)"

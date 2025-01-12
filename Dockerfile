@@ -1,7 +1,7 @@
 FROM fedora:latest
 
 # Install required packages
-RUN dnf install -y git zsh curl chsh which vim fzf && dnf clean all
+RUN dnf install -y git zsh curl chsh which vim fzf bat && dnf clean all
 
 # Add a user without a password
 RUN useradd -m -s $(which zsh) codeopshq
