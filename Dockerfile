@@ -1,6 +1,7 @@
 FROM fedora:latest
 
 # Install required packages
+RUN dnf upgrade --refresh -y
 RUN dnf install -y git zsh curl chsh which vim fzf bat && dnf clean all
 
 # Add a user without a password
