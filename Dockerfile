@@ -22,10 +22,10 @@ RUN chown -R codeopshq:codeopshq /home/codeopshq
 USER codeopshq
 
 # Install Zinit non-interactively
-RUN sh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+# RUN sh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
 # Initialize Zinit plugins during the build process
-RUN zsh -lc "source ~/.zshrc && zinit update"
+RUN zsh -c "source ~/.zshrc"
 
 # Set the entrypoint to zsh
 CMD ["zsh"]
