@@ -1,6 +1,6 @@
 ## Custom Docker image for fedora
 
-* [kalidyasin/fedora](https://hub.docker.com/kalidyasin/fedora/)
+* [kalidyasin/fedora](https://hub.docker.com/r/kalidyasin/fedora/)
 
 ## installation
 
