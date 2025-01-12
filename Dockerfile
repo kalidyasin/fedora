@@ -22,7 +22,7 @@ WORKDIR /home/codeopshq
 # RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install zinit
-Run bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+# Run bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
 # Copy vim configuration
 COPY .vimrc /home/codeopshq/.vimrc
@@ -35,7 +35,12 @@ COPY .vimrc /home/codeopshq/.vimrc
 COPY .zshrc /home/codeopshq/.zshrc
 
 # zinit update && zinit self-update
-RUN zinit update && zinit self-update
+
+RUN exec zsh
+
+# RUN zinit update && zinit self-update
+
+
 
 # Set the entrypoint to zsh
 CMD ["zsh"]
