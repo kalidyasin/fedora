@@ -25,7 +25,7 @@ USER codeopshq
 RUN sh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
 # Initialize Zinit plugins during the build process
-RUN zsh -lc "source ~/.zshrc"
+RUN zsh -lc "source ~/.zshrc && zinit update"
 
 # Set the entrypoint to zsh
 CMD ["zsh"]
