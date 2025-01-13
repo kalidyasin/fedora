@@ -8,6 +8,7 @@ RUN dnf install -y git zsh curl chsh which vim fzf bat && dnf clean all
 RUN useradd -m -s $(which zsh) codeopshq
 RUN passwd -d codeopshq
 RUN usermod -aG wheel codeopshq
+RUN chown -R codeopshq:codeopshq /home/codeopshq
 
 # Switch to the new user
 USER codeopshq
@@ -23,7 +24,6 @@ RUN mkdir -p ~/.local/share/zinit && \
 COPY .vimrc /home/codeopshq/.vimrc
 COPY .zshrc /home/codeopshq/.zshrc
 COPY .p10k.zsh /home/codeopshq/.p10k.zsh
-# RUN chown -R codeopshq:codeopshq /home/codeopshq
 
 # Switch to the new user
 # USER codeopshq
