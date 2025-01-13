@@ -20,8 +20,11 @@ RUN chown -R codeopshq:codeopshq /home/codeopshq
 USER codeopshq
 WORKDIR /home/codeopshq
 
+# set TERM environment variable
+ENV TERM=xterm
+
 # Set up zsh
-RUN TERM=xterm zsh -lc "source ~/.zshrc"
+RUN  zsh -c "source ~/.zshrc"
 
 # Set default shell and entrypoint to zsh
 CMD ["zsh"]
