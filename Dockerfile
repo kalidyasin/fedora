@@ -12,6 +12,7 @@ RUN useradd -m -s $(which zsh) codeopshq \
 
 # Copy configuration files to the user's home directory
 COPY .vimrc .zshrc .p10k.zsh /home/codeopshq/
+COPY .config /home/codeopshq/
 
 # Ensure proper ownership of the copied files
 RUN chown -R codeopshq:codeopshq /home/codeopshq
