@@ -2,7 +2,7 @@ FROM fedora:latest
 
 # Install required packages in one RUN instruction
 RUN dnf upgrade --refresh -y \
-    && dnf install -y git zsh curl which vim fzf bat \
+    && dnf install -y git zsh curl which vim fzf bat ripgrep tmux \
     && dnf clean all
 
 # Create a non-root user with zsh as the default shell
