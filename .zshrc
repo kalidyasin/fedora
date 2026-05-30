@@ -27,7 +27,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light jeffreytse/zsh-vi-mode
 zinit light zsh-users/zsh-history-substring-search
-zinit light MichaelAquilina/zsh-auto-notify
+# zinit light MichaelAquilina/zsh-auto-notify
 zinit light MichaelAquilina/zsh-you-should-use
 
 
@@ -370,4 +370,4 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 # Tmuxifier config for zsh plugins  
-eval "$(tmuxifier init -)"
+# eval "$(tmuxifier init -)"
